@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Interactive Background</title>
+
+</head>
+<body>
+  <!-- For setting background -->
+    <div class="content">
+
+      <!-- Right side image selecting section -->
+        <div id="bg" class="left_bg">
+          <div class="neon-text">Your Text</div>
+          <div class="images">
+            <img src="images/img (1).jpg" alt="Image 1" onclick="setBackground('images/img (1).jpg')">
+            <img src="images/img (2).jpg" alt="Image 2" onclick="setBackground('images/img (2).jpg')">
+            <img src="images/img (3).jpg" alt="Image 3" onclick="setBackground('images/img (3).jpg')">
+            <img src="images/img (4).jpg" alt="Image 4" onclick="setBackground('images/img (4).jpg')">
+            <img src="images/img (1).jpg" alt="Image 5" onclick="setBackground('images/img (1).jpg')">
+            <img src="images/img (4).jpg" alt="Image 6" onclick="setBackground('images/img (4).jpg')">
+        </div>
+        </div>
+
+        <!-- left side color and font selecting section -->
+ <div class="style_plate">
+  <div class="style_section">
+    hello
+  </div>
+ </div>
+
+
+    </div>
+
+  
+<script>
+    function setBackground(image) {
+        // Set the background image for the body
+        document.body.style.backgroundImage = `url('${image}')`;
+
+        // Set the background image for the element with id="bg"
+        const bgElement = document.getElementById("bg");
+        if (bgElement) {
+            bgElement.style.backgroundImage = `url('${image}')`;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  position: relative; /* Required for the pseudo-element */
+  overflow: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('images/img (1).jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scaleY(-1);
+  filter: blur(10px); /* Apply blur to the background image */
+  z-index: -1; /* Ensure it stays behind the content */
+}
+.content {
+   display: flex;
+   align-items: center;
+}
+.neon-text {
+  margin-top: 70px;
+  text-align: center;
+    font-size: 3em;
+    color: #ff007f;
+    text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+}
+.images {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #2b2f2be7;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.images img {
+    width: 100px;
+    height: 100px;
+    margin: 0 5px;
+   border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+.images img:hover {
+    border: 2px solid #ff007f;
+}
+.left_bg {
+  padding: 0 1rem;
+  margin-top: -45px;
+  margin-bottom: -45px;
+  margin-right: -5px;
+  width: 55%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url('images/img (1).jpg');
+  transition: background-image 0.5s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  align-items: center;
+  flex-direction: column;
+  position: relative; /* To position the pseudo-element properly */
+}
+
+.left_bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%; /* Adjust width to control the blurred area */
+  background: inherit; /* Use the same background image */
+  filter: blur(10px); /* Apply blur to the right side */
+  transform: translateX(50%); /* Align the blurred area with the right side */
+  z-index: -1; /* Ensure it stays behind the content */
+}
+.style_plate{
+  width: 45%;
+  position: relative;
+  height: 100vh;
+}
+.style_section{
+  height: 95vh;
+  width: 100%;
+  background:#fff;
+  border-radius: 10px;
+position: absolute;
+top: 20px;
+right: 20px;
+padding: 10px;
+}
