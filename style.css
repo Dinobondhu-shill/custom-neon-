@@ -1,5 +1,5 @@
 /* google font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 html{
@@ -35,7 +35,8 @@ body::before {
    display: flex;
    align-items: center;
 }
-.neon-text {
+#your_text {
+  font-family: "Playwrite AU SA", serif;
   margin-top: 70px;
   text-align: center;
     font-size: 3em;
@@ -90,6 +91,7 @@ overflow: hidden;
   transform: translateX(50%); /* Align the blurred area with the right side */
   z-index: -1; /* Ensure it stays behind the content */
 }
+
 .style_plate{
   width: 45%;
   position: absolute;
