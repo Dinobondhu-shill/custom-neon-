@@ -1,3 +1,7 @@
+const textArea = document.getElementById('input_text');
+const yourText = document.getElementById('your_text');
+
+
 // background image set function
 function setBackground(image) {
   // Set the background image for the body
@@ -23,4 +27,11 @@ toggleButton.addEventListener('click', function () {
   } else {
     hiddenDiv.style.display = 'none'; // Hide the div
   }
+});
+
+// get text area input value
+textArea.addEventListener('input', () => {
+  const text = textArea.value; // Get the current value of the textarea
+  console.log(text)
+  yourText.innerText = `${text}`; // Display the updated value
 });
