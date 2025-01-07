@@ -46,11 +46,23 @@ function changeFontFamily(fontFamily) {
   const div = document.getElementById('your_text'); // Get the target div
   div.style.fontFamily = fontFamily; // Update the font family
 }
-function changeColor(color) {
+
+
+
+// change the color of your text
+function changeColor(color, target) {
   const div = document.getElementById('your_text'); // Get the target div
   div.style.color = color; // Update the font color
   div.style.textShadow = `0 0 5px rgba(${hexToRgb(color)}, 0.8), 0 0 10px rgba(${hexToRgb(color)}, 0.8)`; // Semi-transparent shadow
+
+
+  const colorItems = document.querySelectorAll(".color-item");
+  colorItems.forEach(item=> item.classList.remove("selected"));
+   // Add the 'selected' class to the clicked element
+   target.classList.add('selected');
+
 }
+
 
 function hexToRgb(hex) {
   let r = 0, g = 0, b = 0;

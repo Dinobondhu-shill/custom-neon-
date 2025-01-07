@@ -275,12 +275,20 @@ div.step-content {
   gap: 5px;
   margin-top: 10px;
 }
-.color-item{
-  width: 30px;
-  height: 30px;
-  border-radius: 50px;
-}
+
 .color_name{
   font-size: 10px !important;
   color: #2f2f2f99;
+}
+.color-item {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid transparent; /* Default border */
+  transition: border 0.3s ease; /* Smooth transition for the border */
+}
+
+.color-item.selected {
+  border: 2px solid black; /* Border color when selected */
 }
