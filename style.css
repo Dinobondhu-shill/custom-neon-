@@ -40,8 +40,11 @@ body::before {
   margin-top: 70px;
   text-align: center;
     font-size: 3em;
-    color: #ff007f;
-    text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+    color: #29f2c6;
+    letter-spacing: 0.5px;
+    font-weight: 300; 
+    text-shadow: 0 0 5px #29f2c6, 0 0 10px #29f2c6, 0 0 20px #ff007f, 0 0 40px #29f2c6;
+    transition: all 0.5s ease-in-out;
 }
 .images {
     display: flex;
