@@ -41,7 +41,7 @@
     </div>
 
     <!-- Right side color and font selecting section -->
-    <div class="style_plate">
+    <form class="style_plate">
       <div class="style_section">
         <!-- Enter Signature text input  -->
         <div class="text-box">
@@ -132,7 +132,7 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
 
 
-
+              <input type="hidden" id="selectedFont" name="font" />
             </div>
           </div>
         </div>
@@ -184,6 +184,7 @@ Press Enter/Return for a new line" ;"></textarea>
               <div onclick="changeColor('#1809f0', this)" style="background-color: #1809f0;" class="color-item"></div>
               <span class="color_name">Blue</span>
             </div>
+            <input type="hidden" id="selectedColor" name="color" />
           </div>
           <!--------------------------------------RGB Automatic changing color------------------ -->
           <div class="rgb-changing">
@@ -206,8 +207,8 @@ Press Enter/Return for a new line" ;"></textarea>
             <span class="serial"> 4 </span>
             <h2>Choose Size</h2>
           </div>
-          <div class="sizes">
-            <div class="size">
+          <div  class="sizes">
+            <div onclick="handleSize('mini')" class="size">
               <h5>Mini</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -215,7 +216,7 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div class="size">
+            <div onclick="handleSize('Extra small')" class="size">
               <h5>Extra Small</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -223,7 +224,7 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div class="size">
+            <div onclick="handleSize('Small')" class="size">
               <h5>Small</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -231,11 +232,11 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div class="size">
+            <div onclick="handleSize('Medium')" class="size">
               <h5>Medium</h5>
               <p>This is not available for rgb</p>
             </div>
-            <div class="size">
+            <div onclick="handleSize('Large')" class="size">
               <h5>Large</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -243,11 +244,11 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div class="size">
+            <div onclick="handleSize('Extra Large')" class="size">
               <h5>X Large</h5>
               <p>This is not available for rgb</p>
             </div>
-            <div class="size">
+            <div onclick="handleSize('XX Large')" class="size">
               <h5>XX Large</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -255,7 +256,7 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div class="size">
+            <div onclick="handleSize('Supersized')" class="size">
               <h5>Supersized</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -263,6 +264,7 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
+            <input type="hidden" id="selectedSize" name="size" />
           </div>
           <h3 class="step-title" style="text-align: center;">*Each sign is handcrafted, and sizes shown will be accurate
             within 1 or 2 inches.</h3>
@@ -275,13 +277,14 @@ Press Enter/Return for a new line" ;"></textarea>
             <h2>Indoor Or OutDoor</h2>
           </div>
           <div class="place-container">
-            <div class="options"> Indoor </div>
-            <div class="options"> IP67 Waterproof Technology* </div>
+            <div onclick="handleArea('Indoor')" class="options"> Indoor </div>
+            <div onclick="handleArea('WaterProof')" class="options"> IP67 Waterproof Technology* </div>
           </div>
           <div class="step-title">
             Indoor Signs are not suitable for use outdoors or anywhere they might get wet. Inappropriate use will void
             the warranty.
           </div>
+          <input type="hidden" id="selectedPlace" name="place" />
         </div>
         <!---------------------BackBoard Style------------------ -->
         <div class="step-6">
@@ -290,7 +293,7 @@ Press Enter/Return for a new line" ;"></textarea>
             <h2>Backboard style</h2>
           </div>
           <div class="backboard_style">
-            <div class="variant">
+            <div onclick="handleBackboard('Cut around')" class="variant">
               <div class="variant_heading">
                 <p>Cut Around
                 </p>
@@ -300,7 +303,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardaround.png" alt="">
               </div>
             </div>
-            <div class="variant">
+            <div onclick="handleBackboard('Rectangle')" class="variant">
               <div class="variant_heading">
                 <p>Rectangle
                 </p>
@@ -310,7 +313,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardrectangle.png" alt="">
               </div>
             </div>
-            <div class="variant">
+            <div onclick="handleBackboard('Cut To Letter')" class="variant">
               <div class="variant_heading">
                 <p>Cut-To-Letter
 
@@ -321,7 +324,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardletter.png" alt="">
               </div>
             </div>
-            <div class="variant">
+            <div onclick="handleBackboard('Naked Neon')" class="variant">
               <div class="variant_heading">
                 <p>Naked Neon
                 </p>
@@ -331,7 +334,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardnaked.png" alt="">
               </div>
             </div>
-            <div class="variant">
+            <div onclick="handleBackboard('Open Box')" class="variant">
               <div class="variant_heading">
                 <p>Open Box
                 </p>
@@ -341,7 +344,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardopenbox.png" alt="">
               </div>
             </div>
-            <div class="variant">
+            <div onclick="handleBackboard('Free Stand')" class="variant">
               <div class="variant_heading">
                 <p>Free Stand
                 </p>
@@ -351,6 +354,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardfreestand.png" alt="">
               </div>
             </div>
+            <input type="hidden" id="selectedVariant" name="variant" />
           </div>
 
         </div>
@@ -407,7 +411,7 @@ Press Enter/Return for a new line" ;"></textarea>
 
             <!-- Third Option -->
             <label class="custom-checkbox-option">
-              <input type="checkbox" class="custom-checkbox" />
+              <input type="checkbox" class="custom-checkbox" checked/>
               <span class="custom-checkmark"></span>
               <span class="custom-label">
                 Special Offer
@@ -419,8 +423,10 @@ Press Enter/Return for a new line" ;"></textarea>
 
 
         </div>
+        <!----------------------submit button --------------------------- -->
+        <button type="submit" class="submit-button">Next</button>
       </div>
-    </div>
+    </form> 
   </div>
 
 

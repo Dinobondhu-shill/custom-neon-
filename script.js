@@ -42,6 +42,7 @@ textArea.addEventListener('input', () => {
 
 // change the font-family
 function changeFontFamily(fontFamily) {
+ document.getElementById("selectedFont").value = fontFamily
   yourText.style.fontFamily = fontFamily; // Update the font family
 }
 
@@ -49,7 +50,9 @@ function changeFontFamily(fontFamily) {
 
 // change the color of your text
 function changeColor(color, target) {
-  
+ const selectedColor = document.getElementById("selectedColor").value = color;
+
+
   yourText.style.color = color; // Update the font color
   toggleSwitch.style.display = 'flex'
 rgbDiv.style.display = 'none'
@@ -63,16 +66,18 @@ rgbDiv.style.display = 'none'
     .map(c => c.trim())
     .join(", ");
 
+
+    yourText.style.textShadow= `0 0 0px rgb(${rgbColor}), 0 2px 5px rgb(${rgbColor}), 0 5px 45px rgb(${rgbColor}), 0 0 45px rgb(${rgbColor}), 0 0 50px rgb(${rgbColor}), 0 0 80px rgb(${rgbColor}), 10px 15px 85px rgb(${rgbColor}), 0 14px 20px rgb(${rgbColor})`;
   // Update the text shadow dynamically using the color
-  yourText.style.textShadow = `
-    rgb(${rgbColor}) 1px 1px 0px, rgb(${rgbColor}) -1px -1px 0px, rgb(${rgbColor}) -1px 1px 0px, rgb(${rgbColor}) 1px -1px 0px,
-    rgba(${rgbColor}, 0.6) 2px 2px 0px, rgba(${rgbColor}, 0.6) -2px -2px 0px, rgba(${rgbColor}, 0.6) -2px 2px 0px, rgba(${rgbColor}, 0.6) 2px -2px 0px,
-    rgb(255, 255, 255) 0px 0px 3px, rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 8px, rgb(255, 255, 255) 0px 0px 10px,
-    rgba(255, 255, 255, 0.6) 0px 0px 12px, rgba(255, 255, 255, 0.5) 0px 0px 18px,
-    rgb(${rgbColor}) 0px 0px 20px, rgb(${rgbColor}) 0px 0px 30px, rgb(${rgbColor}) 0px 0px 40px,
-    rgb(${rgbColor}) 0px 0px 50px, rgb(${rgbColor}) 0px 0px 60px, rgb(${rgbColor}) 0px 0px 70px,
-    rgb(${rgbColor}) 0px 0px 80px, rgb(${rgbColor}) 0px 0px 90px, rgba(${rgbColor}, 0.5) 0px 0px 100px
-  `;
+  // yourText.style.textShadow = `
+  //   rgb(${rgbColor}) 1px 1px 0px, rgb(${rgbColor}) -1px -1px 0px, rgb(${rgbColor}) -1px 1px 0px, rgb(${rgbColor}) 1px -1px 0px,
+  //   rgba(${rgbColor}, 0.6) 2px 2px 0px, rgba(${rgbColor}, 0.6) -2px -2px 0px, rgba(${rgbColor}, 0.6) -2px 2px 0px, rgba(${rgbColor}, 0.6) 2px -2px 0px,
+  //   rgb(255, 255, 255) 0px 0px 3px, rgb(255, 255, 255) 0px 0px 5px, rgb(255, 255, 255) 0px 0px 8px, rgb(255, 255, 255) 0px 0px 10px,
+  //   rgba(255, 255, 255, 0.6) 0px 0px 12px, rgba(255, 255, 255, 0.5) 0px 0px 18px,
+  //   rgb(${rgbColor}) 0px 0px 20px, rgb(${rgbColor}) 0px 0px 30px, rgb(${rgbColor}) 0px 0px 40px,
+  //   rgb(${rgbColor}) 0px 0px 50px, rgb(${rgbColor}) 0px 0px 60px, rgb(${rgbColor}) 0px 0px 70px,
+  //   rgb(${rgbColor}) 0px 0px 80px, rgb(${rgbColor}) 0px 0px 90px, rgba(${rgbColor}, 0.5) 0px 0px 100px
+  // `;
 
 
   const colorItems = document.querySelectorAll(".color-item");
@@ -178,6 +183,48 @@ rgbDiv.style.display = 'flex'
   }
 }
 
+// handle size 
+function handleSize(size){
+document.getElementById("selectedSize").value = size;
+}
+// function for get choosing area
+function handleArea(name){
+  document.getElementById("selectedPlace").value = name;
+}
+
+// function for handle Backboard option
+function handleBackboard(name){
+  document.getElementById("selectedVariant").value = name;
+}
+
+// handle selected option for setting kit 
+function getCheckboxValues() {
+  const checkboxes = document.querySelectorAll(".custom-checkbox");
+  const selectedValues = [];
+
+  checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      // Get the parent label of the checkbox
+      const label = checkbox.closest(".custom-checkbox-option");
+      
+      // Get the label text (associated description)
+      const labelText = label.querySelector(".custom-label").innerText.trim();
+
+      // Check if it contains a dropdown
+      const select = label.querySelector(".custom-select");
+      const selectedOption = select ? select.value : null;
+
+      // Add data to the results array
+      selectedValues.push({
+        label: labelText,
+        selectedOption: selectedOption || null, // Add dropdown value if it exists
+      });
+    }
+  });
+
+  return selectedValues;
+}
+
 function toggleShadow() {
 const toggle = document.getElementById("toggle");; // Reference the target text element
 
@@ -201,4 +248,40 @@ const toggle = document.getElementById("toggle");; // Reference the target text 
     }
   });
 }
+
+// Handle form submit
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  // Collecting values
+  const selectedText = textArea.value // Assuming textArea has an ID
+  const selectedFont = document.getElementById("selectedFont").value;
+  const selectedArea = document.getElementById("selectedPlace").value;
+  const selectedColor = document.getElementById("selectedColor").value;
+  const selectedSize = document.getElementById("selectedSize").value;
+  const selectedVariant = document.getElementById("selectedVariant").value;
+  const selectedOptions = getCheckboxValues();
+
+  // Validation
+  let errorMessage = ""; // To hold error messages
+
+  if (!selectedText) errorMessage += "Text field is required.\n";
+  if (!selectedFont) errorMessage += "Font selection is required.\n";
+  if (!selectedArea) errorMessage += "Placement selection is required.\n";
+  if (!selectedColor) errorMessage += "Color selection is required.\n";
+  if (!selectedSize) errorMessage += "Size selection is required.\n";
+  if (!selectedVariant) errorMessage += "Variant selection is required.\n";
+  if (selectedOptions.length === 0) errorMessage += "At least one option must be selected.\n";
+
+  // If there are errors, show alert and stop submission
+  if (errorMessage) {
+    alert("Please fill in all required fields:\n" + errorMessage);
+    return;
+  }
+
+  // If everything is valid, submit form data
+  console.log("Form Submitted with:", selectedOptions, selectedArea, selectedColor, selectedFont, selectedVariant, selectedText, selectedSize);
+});
+
+
 toggleShadow()
