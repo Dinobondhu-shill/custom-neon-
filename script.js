@@ -4,6 +4,7 @@ const toggleButton = document.getElementById('toggleButton');
 const hiddenDiv = document.getElementById('hiddenDiv');
 let changeRGBInterval = null;
 const toggleSwitch = document.getElementById("shadow-switch")
+const rgbDiv = document.getElementById("rgb-div") 
 
 // background image set function
 function setBackground(image) {
@@ -50,6 +51,8 @@ function changeFontFamily(fontFamily) {
 function changeColor(color, target) {
   
   yourText.style.color = color; // Update the font color
+  toggleSwitch.style.display = 'flex'
+rgbDiv.style.display = 'none'
 
   // Extract the RGB values from the color argument
   const rgbColor = color
@@ -126,7 +129,7 @@ setInterval(changeTextColor, 1000);
 
 function changeRGB(target) {
 
-  const rgbDiv = document.getElementById("rgb-div") 
+ 
   // Select all elements with the class "color-item"
   const colorItems = document.querySelectorAll(".color-item");
 
