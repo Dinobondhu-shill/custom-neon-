@@ -29,6 +29,15 @@
         <img src="images/img (1).jpg" alt="Image 5" onclick="setBackground('images/img (1).jpg')">
         <img src="images/img (4).jpg" alt="Image 6" onclick="setBackground('images/img (4).jpg')">
       </div>
+      <label id="shadow-switch" class="toggle-switch">
+        <input id="toggle" type="checkbox" checked>
+        <span class="slider"></span>
+      </label>
+      <div style="display: none;" id="rgb-div" class="rgb">
+        <span class="r">R</span>
+        <span class="g">G</span>
+        <span class="b">B</span>
+      </div>
     </div>
 
     <!-- Right side color and font selecting section -->
@@ -136,7 +145,7 @@ Press Enter/Return for a new line" ;"></textarea>
           <!----------------------color plate------------------------->
           <div class="color-container">
             <div class="color">
-              <div onclick="changeColor('#f38f03', this)" style="background-color: #f38f03;" class="color-item"></div>
+              <div onclick="changeColor('#f38f03', this)" style="background-color: #f38f03;" class="color-item selected"></div>
               <span class="color_name">Orange</span>
             </div>
             <div class="color">
@@ -255,7 +264,8 @@ Press Enter/Return for a new line" ;"></textarea>
               <p>This is not available for rgb</p>
             </div>
           </div>
-          <h3 class="step-title" style="text-align: center;">*Each sign is handcrafted, and sizes shown will be accurate within 1 or 2 inches.</h3>
+          <h3 class="step-title" style="text-align: center;">*Each sign is handcrafted, and sizes shown will be accurate
+            within 1 or 2 inches.</h3>
 
         </div>
         <!------------------Place ------------------------------  -->
@@ -269,11 +279,12 @@ Press Enter/Return for a new line" ;"></textarea>
             <div class="options"> IP67 Waterproof Technology* </div>
           </div>
           <div class="step-title">
-            Indoor Signs are not suitable for use outdoors or anywhere they might get wet. Inappropriate use will void the warranty.
+            Indoor Signs are not suitable for use outdoors or anywhere they might get wet. Inappropriate use will void
+            the warranty.
           </div>
         </div>
         <!---------------------BackBoard Style------------------ -->
-        <div class="step-5">
+        <div class="step-6">
           <div class="text-box">
             <span class="serial"> 6 </span>
             <h2>Backboard style</h2>
@@ -283,7 +294,7 @@ Press Enter/Return for a new line" ;"></textarea>
               <div class="variant_heading">
                 <p>Cut Around
                 </p>
-              <h6>FREE</h6>
+                <h6>FREE</h6>
               </div>
               <div class="variant_image">
                 <img src="images/backboard/backboardaround.png" alt="">
@@ -293,7 +304,7 @@ Press Enter/Return for a new line" ;"></textarea>
               <div class="variant_heading">
                 <p>Rectangle
                 </p>
-              <h6>FREE</h6>
+                <h6>FREE</h6>
               </div>
               <div class="variant_image">
                 <img src="images/backboard/backboardrectangle.png" alt="">
@@ -304,7 +315,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <p>Cut-To-Letter
 
                 </p>
-              <h6>FREE</h6>
+                <h6>FREE</h6>
               </div>
               <div class="variant_image">
                 <img src="images/backboard/backboardletter.png" alt="">
@@ -314,7 +325,7 @@ Press Enter/Return for a new line" ;"></textarea>
               <div class="variant_heading">
                 <p>Naked Neon
                 </p>
-              <h6>FREE</h6>
+                <h6>FREE</h6>
               </div>
               <div class="variant_image">
                 <img src="images/backboard/backboardnaked.png" alt="">
@@ -324,7 +335,7 @@ Press Enter/Return for a new line" ;"></textarea>
               <div class="variant_heading">
                 <p>Open Box
                 </p>
-              <h6>FREE</h6>
+                <h6>FREE</h6>
               </div>
               <div class="variant_image">
                 <img src="images/backboard/backboardopenbox.png" alt="">
@@ -334,7 +345,7 @@ Press Enter/Return for a new line" ;"></textarea>
               <div class="variant_heading">
                 <p>Free Stand
                 </p>
-              <h6>FREE</h6>
+                <h6>FREE</h6>
               </div>
               <div class="variant_image">
                 <img src="images/backboard/backboardfreestand.png" alt="">
@@ -345,22 +356,68 @@ Press Enter/Return for a new line" ;"></textarea>
         </div>
 
         <!----------------------BackBoard Color----------------- -->
-        <div class="step-6">
+        <div class="step-7">
           <div class="text-box">
-            <span class="serial"> 6 </span>
+            <span class="serial"> 7 </span>
             <h2>Backboard Color</h2>
           </div>
           <div class="backboard_color">
-              <div>
-                <p class="step-title">
-                  Standard clear acrylic backboard
-                </p>
-                <h6>
-                  Free
-                </h6>
-              </div>
-              <div  style="background-color: rgba(225, 166, 230, 0.832); border: 1px solid rgb(164, 125, 71);"  class="color-item"></div>
+            <div>
+              <p class="step-title">
+                Standard clear acrylic backboard
+              </p>
+              <h6>
+                Free
+              </h6>
+            </div>
+            <div style="background-color: rgba(225, 166, 230, 0.832); border: 1px solid rgb(164, 125, 71);"
+              class="color-item"></div>
           </div>
+          <div class="backboard_example"> See Example</div>
+        </div>
+
+        <!-----------------------Options--------------------------->
+        <div class="step-8">
+          <div class="text-box">
+            <span class="serial"> 8 </span>
+            <h2>Options</h2>
+          </div>
+          <div class="custom-checkbox-container">
+            <!-- First Option -->
+            <label class="custom-checkbox-option">
+              <input type="checkbox" class="custom-checkbox" />
+              <span class="custom-checkmark"></span>
+              <span class="custom-label">
+                <a href="#" class="custom-link">Wall Mounting</a> Kit
+                <select class="custom-select">
+                  <option>Silver $15</option>
+                  <option>Gold $20</option>
+                </select>
+              </span>
+            </label>
+
+            <!-- Second Option -->
+            <label class="custom-checkbox-option">
+              <input type="checkbox" class="custom-checkbox" />
+              <span class="custom-checkmark"></span>
+              <span class="custom-label">
+                <a href="#" class="custom-link sing-hanging">Sign Hanging</a> Kit $15
+              </span>
+            </label>
+
+            <!-- Third Option -->
+            <label class="custom-checkbox-option">
+              <input type="checkbox" class="custom-checkbox" />
+              <span class="custom-checkmark"></span>
+              <span class="custom-label">
+                Special Offer
+                <a href="#" class="custom-link sing-hanging">Remote and dimmer</a> Free
+              </span>
+            </label>
+          </div>
+
+
+
         </div>
       </div>
     </div>

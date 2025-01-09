@@ -40,7 +40,7 @@ body::before {
   margin-top: 70px;
   text-align: center;
     font-size: 3em;
-    color: #29f2c6;
+    color: orange;
     letter-spacing: 0.5px;
     font-weight: 300; 
     text-shadow: 0 0 5px #29f2c6, 0 0 10px #29f2c6, 0 0 20px #ff007f, 0 0 40px #29f2c6;
@@ -81,6 +81,7 @@ body::before {
   align-items: center;
   flex-direction: column;
 overflow: hidden;
+position: relative;
 }
 .left_bg::after {
   content: '';
@@ -429,4 +430,180 @@ font-weight: 600;
 }
 .step-6{
   margin: 20px 0;
+}
+
+.backboard_example{
+  cursor: pointer;
+  text-transform: uppercase;
+    color: #5761fe !important;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: end;
+}
+
+/*======================== Custom Checkbox ===========================*/
+.custom-checkbox-container{
+  margin: 0px 0;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+/* Styling each checkbox option */
+.custom-checkbox-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  gap: 10px;
+}
+
+/* Hide the default checkboxes */
+.custom-checkbox {
+  display: none;
+}
+
+/* Style the custom checkmark */
+.custom-checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Add a pink checkmark when selected */
+.custom-checkbox:checked + .custom-checkmark {
+  border-color: #ff66cc;
+  background-color: #ff66cc;
+}
+
+.custom-checkbox:checked + .custom-checkmark::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style for the label */
+.custom-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000;
+}
+
+/* Link style */
+.custom-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+/* Dropdown style */
+.custom-select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sing-hanging{
+  color: #ff66cc;
+}
+/* toogle switch  */
+
+
+.toggle-switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  top: 10%;
+  left: 10%;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: all linear .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "OFF";
+  color: #fff;
+  text-align: center;
+  line-height: 34px;
+  width: 40px;
+  height: 34px;
+  transition:all linear .4s;
+  border-radius: 34px;
+  background-color: #444;
+}
+
+input:checked + .slider {
+  background-color: #e941c5;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+  background-color: #fff;
+  color: #e941c5;
+  content: "ON";
+}
+/* rgb */
+.rgb{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 70px;
+  height: 34px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.r{
+  background: red;
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: white;
+}
+.g{
+  background: green;
+  width: 33.4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: white;
+}
+.b{
+  background: blue;
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: white;
 }
