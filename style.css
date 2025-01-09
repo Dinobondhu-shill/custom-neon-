@@ -296,6 +296,10 @@ div.step-content {
 .color-item.selected {
   border: 2px solid black; /* Border color when selected */
 }
+.size.selected, .options.selected, .variant.selected, .font-item.selected {
+  border: 2px solid black; /* Border color when selected */
+  background-color: transparent;
+}
 #color-change-container{
   margin-top: 20px;
   display: flex;

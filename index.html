@@ -84,23 +84,23 @@ Press Enter/Return for a new line" ;"></textarea>
 
             <!-- hidden area -->
             <div id="hiddenDiv" class="hidden-div">
-              <div onclick="changeFontFamily('Poppins')" class="font-item">
+              <div onclick="changeFontFamily('Poppins', this)" class="font-item">
                 <img src="images/alexa.png" alt="">
               </div>
 
-              <div onclick="changeFontFamily('Inconsolata')" class="font-item">
+              <div onclick="changeFontFamily('Inconsolata', this)" class="font-item">
                 <img src="images/bayview.svg" alt="">
               </div>
-              <div onclick="changeFontFamily('Playwrite AU SA')" class="font-item">
+              <div onclick="changeFontFamily('Playwrite AU SA', this)" class="font-item">
                 <img src="images/alexa.png" alt="">
               </div>
-              <div onclick="changeFontFamily('Inconsolata')" class="font-item">
+              <div onclick="changeFontFamily('Inconsolata', this)" class="font-item">
                 <img src="images/barcelona.svg" alt="">
               </div>
-              <div onclick="changeFontFamily('Poppins')" class="font-item">
+              <div onclick="changeFontFamily('Poppins', this)" class="font-item">
                 <img src="images/barcelona.svg" alt="">
               </div>
-              <div class="font-item">
+              <div onclick="changeFontFamily('Poppins', this)" class="font-item">
                 <img src="images/barcelona.svg" alt="">
               </div>
               <div class="font-item">
@@ -208,7 +208,7 @@ Press Enter/Return for a new line" ;"></textarea>
             <h2>Choose Size</h2>
           </div>
           <div  class="sizes">
-            <div onclick="handleSize('mini')" class="size">
+            <div onclick="handleSize('mini', this)" class="size">
               <h5>Mini</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -216,7 +216,7 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div onclick="handleSize('Extra small')" class="size">
+            <div onclick="handleSize('Extra small', this)" class="size">
               <h5>Extra Small</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -224,7 +224,7 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div onclick="handleSize('Small')" class="size">
+            <div onclick="handleSize('Small', this)" class="size">
               <h5>Small</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -232,11 +232,11 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div onclick="handleSize('Medium')" class="size">
+            <div onclick="handleSize('Medium', this)" class="size">
               <h5>Medium</h5>
               <p>This is not available for rgb</p>
             </div>
-            <div onclick="handleSize('Large')" class="size">
+            <div onclick="handleSize('Large', this)" class="size">
               <h5>Large</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -244,11 +244,11 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div onclick="handleSize('Extra Large')" class="size">
+            <div onclick="handleSize('Extra Large', this)" class="size">
               <h5>X Large</h5>
               <p>This is not available for rgb</p>
             </div>
-            <div onclick="handleSize('XX Large')" class="size">
+            <div onclick="handleSize('XX Large', this)" class="size">
               <h5>XX Large</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -256,7 +256,7 @@ Press Enter/Return for a new line" ;"></textarea>
               </div>
               <p>This is not available for rgb</p>
             </div>
-            <div onclick="handleSize('Supersized')" class="size">
+            <div onclick="handleSize('Supersized',this)" class="size">
               <h5>Supersized</h5>
               <div class="size-details">
                 <p>Length: "</p>
@@ -277,8 +277,8 @@ Press Enter/Return for a new line" ;"></textarea>
             <h2>Indoor Or OutDoor</h2>
           </div>
           <div class="place-container">
-            <div onclick="handleArea('Indoor')" class="options"> Indoor </div>
-            <div onclick="handleArea('WaterProof')" class="options"> IP67 Waterproof Technology* </div>
+            <div onclick="handleArea('Indoor', this)" class="options"> Indoor </div>
+            <div onclick="handleArea('WaterProof', this)" class="options"> IP67 Waterproof Technology* </div>
           </div>
           <div class="step-title">
             Indoor Signs are not suitable for use outdoors or anywhere they might get wet. Inappropriate use will void
@@ -293,7 +293,7 @@ Press Enter/Return for a new line" ;"></textarea>
             <h2>Backboard style</h2>
           </div>
           <div class="backboard_style">
-            <div onclick="handleBackboard('Cut around')" class="variant">
+            <div onclick="handleBackboard('Cut around', this)" class="variant">
               <div class="variant_heading">
                 <p>Cut Around
                 </p>
@@ -303,7 +303,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardaround.png" alt="">
               </div>
             </div>
-            <div onclick="handleBackboard('Rectangle')" class="variant">
+            <div onclick="handleBackboard('Rectangle', this)" class="variant">
               <div class="variant_heading">
                 <p>Rectangle
                 </p>
@@ -313,7 +313,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardrectangle.png" alt="">
               </div>
             </div>
-            <div onclick="handleBackboard('Cut To Letter')" class="variant">
+            <div onclick="handleBackboard('Cut To Letter', this)" class="variant">
               <div class="variant_heading">
                 <p>Cut-To-Letter
 
@@ -324,7 +324,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardletter.png" alt="">
               </div>
             </div>
-            <div onclick="handleBackboard('Naked Neon')" class="variant">
+            <div onclick="handleBackboard('Naked Neon', this)" class="variant">
               <div class="variant_heading">
                 <p>Naked Neon
                 </p>
@@ -334,7 +334,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardnaked.png" alt="">
               </div>
             </div>
-            <div onclick="handleBackboard('Open Box')" class="variant">
+            <div onclick="handleBackboard('Open Box', this)" class="variant">
               <div class="variant_heading">
                 <p>Open Box
                 </p>
@@ -344,7 +344,7 @@ Press Enter/Return for a new line" ;"></textarea>
                 <img src="images/backboard/backboardopenbox.png" alt="">
               </div>
             </div>
-            <div onclick="handleBackboard('Free Stand')" class="variant">
+            <div onclick="handleBackboard('Free Stand', this)" class="variant">
               <div class="variant_heading">
                 <p>Free Stand
                 </p>

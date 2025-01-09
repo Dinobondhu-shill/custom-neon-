@@ -41,16 +41,21 @@ textArea.addEventListener('input', () => {
 });
 
 // change the font-family
-function changeFontFamily(fontFamily) {
+function changeFontFamily(fontFamily, target) {
  document.getElementById("selectedFont").value = fontFamily
   yourText.style.fontFamily = fontFamily; // Update the font family
+
+  const selectedItem = document.querySelectorAll(".font-item");
+  selectedItem.forEach(item => item.classList.remove("selected"));
+  // Add the 'selected' class to the clicked element
+  target.classList.add('selected');
 }
 
 
 
 // change the color of your text
 function changeColor(color, target) {
- const selectedColor = document.getElementById("selectedColor").value = color;
+document.getElementById("selectedColor").value = color;
 
 
   yourText.style.color = color; // Update the font color
@@ -78,7 +83,6 @@ rgbDiv.style.display = 'none'
   //   rgb(${rgbColor}) 0px 0px 50px, rgb(${rgbColor}) 0px 0px 60px, rgb(${rgbColor}) 0px 0px 70px,
   //   rgb(${rgbColor}) 0px 0px 80px, rgb(${rgbColor}) 0px 0px 90px, rgba(${rgbColor}, 0.5) 0px 0px 100px
   // `;
-
 
   const colorItems = document.querySelectorAll(".color-item");
   colorItems.forEach(item => item.classList.remove("selected"));
@@ -184,17 +188,33 @@ rgbDiv.style.display = 'flex'
 }
 
 // handle size 
-function handleSize(size){
+function handleSize(size, target){
 document.getElementById("selectedSize").value = size;
+const selectedItem = document.querySelectorAll(".size");
+selectedItem.forEach(item => item.classList.remove("selected"));
+  // Add the 'selected' class to the clicked element
+  target.classList.add('selected');
 }
+
+
 // function for get choosing area
-function handleArea(name){
+function handleArea(name, target){
   document.getElementById("selectedPlace").value = name;
+
+  const selectedItem = document.querySelectorAll(".options");
+  selectedItem.forEach(item => item.classList.remove("selected"));
+  // Add the 'selected' class to the clicked element
+  target.classList.add('selected');
 }
 
 // function for handle Backboard option
-function handleBackboard(name){
+function handleBackboard(name, target){
   document.getElementById("selectedVariant").value = name;
+
+  const selectedItem = document.querySelectorAll(".variant");
+  selectedItem.forEach(item => item.classList.remove("selected"));
+  // Add the 'selected' class to the clicked element
+  target.classList.add('selected');
 }
 
 // handle selected option for setting kit 
@@ -279,6 +299,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
     return;
   }
 
+  alert("Congratulations!, You'll Reach you out soon")
   // If everything is valid, submit form data
   console.log("Form Submitted with:", selectedOptions, selectedArea, selectedColor, selectedFont, selectedVariant, selectedText, selectedSize);
 });
