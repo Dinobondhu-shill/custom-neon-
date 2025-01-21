@@ -1,0 +1,41 @@
+@media screen and (max-width: 576px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+ }
+  .left_bg{
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .style_plate {
+    width: 100%;
+    position: static;
+    height: fit-content;
+
+}
+.images {
+  width: 90%;
+}
+.images img {
+  width: 60px;
+  height: 60px;
+}
+
+#your_text {
+  margin-top: 50px;
+  font-size: 2em;
+
+}
+.sizes {
+  gap: 12px;
+}
+
+.font-item {
+  width: 90px;
+}
+.variant {
+  width: 48%;
+  padding: 3px 4px;
+}
+}

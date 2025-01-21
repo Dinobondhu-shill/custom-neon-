@@ -4,7 +4,7 @@ const toggleButton = document.getElementById('toggleButton');
 const hiddenDiv = document.getElementById('hiddenDiv');
 let changeRGBInterval = null;
 const toggleSwitch = document.getElementById("shadow-switch")
-const rgbDiv = document.getElementById("rgb-div") 
+const rgbDiv = document.getElementById("rgb-div")
 
 // background image set function
 function setBackground(image) {
@@ -42,7 +42,7 @@ textArea.addEventListener('input', () => {
 
 // change the font-family
 function changeFontFamily(fontFamily, target) {
- document.getElementById("selectedFont").value = fontFamily
+  document.getElementById("selectedFont").value = fontFamily
   yourText.style.fontFamily = fontFamily; // Update the font family
 
   const selectedItem = document.querySelectorAll(".font-item");
@@ -55,12 +55,12 @@ function changeFontFamily(fontFamily, target) {
 
 // change the color of your text
 function changeColor(color, target) {
-document.getElementById("selectedColor").value = color;
+  document.getElementById("selectedColor").value = color;
 
 
   yourText.style.color = color; // Update the font color
   toggleSwitch.style.display = 'flex'
-rgbDiv.style.display = 'none'
+  rgbDiv.style.display = 'none'
 
   // Extract the RGB values from the color argument
   const rgbColor = color
@@ -72,7 +72,7 @@ rgbDiv.style.display = 'none'
     .join(", ");
 
 
-    yourText.style.textShadow= `0 0 0px rgb(${rgbColor}), 0 2px 5px rgb(${rgbColor}), 0 5px 45px rgb(${rgbColor}), 0 0 45px rgb(${rgbColor}), 0 0 50px rgb(${rgbColor}), 0 0 80px rgb(${rgbColor}), 10px 15px 85px rgb(${rgbColor}), 0 14px 20px rgb(${rgbColor})`;
+  yourText.style.textShadow = `0 0 0px rgb(${rgbColor}), 0 2px 5px rgb(${rgbColor}), 0 5px 45px rgb(${rgbColor}), 0 0 45px rgb(${rgbColor}), 0 0 50px rgb(${rgbColor}), 0 0 80px rgb(${rgbColor}), 10px 15px 85px rgb(${rgbColor}), 0 14px 20px rgb(${rgbColor})`;
   // Update the text shadow dynamically using the color
   // yourText.style.textShadow = `
   //   rgb(${rgbColor}) 1px 1px 0px, rgb(${rgbColor}) -1px -1px 0px, rgb(${rgbColor}) -1px 1px 0px, rgb(${rgbColor}) 1px -1px 0px,
@@ -89,8 +89,8 @@ rgbDiv.style.display = 'none'
   // Add the 'selected' class to the clicked element
   target.classList.add('selected');
 
-   // Clear any existing intervals to prevent stacking
-   if (changeRGBInterval) {
+  // Clear any existing intervals to prevent stacking
+  if (changeRGBInterval) {
     clearInterval(changeRGBInterval);
     changeRGBInterval = null;
   }
@@ -138,7 +138,7 @@ setInterval(changeTextColor, 1000);
 
 function changeRGB(target) {
 
- 
+
   // Select all elements with the class "color-item"
   const colorItems = document.querySelectorAll(".color-item");
 
@@ -147,13 +147,13 @@ function changeRGB(target) {
 
   // Add the 'selected' class to the clicked element
   target.classList.add("selected");
-toggleSwitch.style.display = 'none'
-rgbDiv.style.display = 'flex'
+  toggleSwitch.style.display = 'none'
+  rgbDiv.style.display = 'flex'
   // Check if the target has the 'selected' class and call the function every 500ms
   if (target.classList.contains("selected")) {
 
-     // Set up a new interval for the color change
-     changeRGBInterval = setInterval(() => {
+    // Set up a new interval for the color change
+    changeRGBInterval = setInterval(() => {
       const newR = getRandomColorValue();
       const newG = getRandomColorValue();
       const newB = getRandomColorValue();
@@ -188,17 +188,17 @@ rgbDiv.style.display = 'flex'
 }
 
 // handle size 
-function handleSize(size, target){
-document.getElementById("selectedSize").value = size;
-const selectedItem = document.querySelectorAll(".size");
-selectedItem.forEach(item => item.classList.remove("selected"));
+function handleSize(size, target) {
+  document.getElementById("selectedSize").value = size;
+  const selectedItem = document.querySelectorAll(".size");
+  selectedItem.forEach(item => item.classList.remove("selected"));
   // Add the 'selected' class to the clicked element
   target.classList.add('selected');
 }
 
 
 // function for get choosing area
-function handleArea(name, target){
+function handleArea(name, target) {
   document.getElementById("selectedPlace").value = name;
 
   const selectedItem = document.querySelectorAll(".options");
@@ -208,7 +208,7 @@ function handleArea(name, target){
 }
 
 // function for handle Backboard option
-function handleBackboard(name, target){
+function handleBackboard(name, target) {
   document.getElementById("selectedVariant").value = name;
 
   const selectedItem = document.querySelectorAll(".variant");
@@ -226,7 +226,7 @@ function getCheckboxValues() {
     if (checkbox.checked) {
       // Get the parent label of the checkbox
       const label = checkbox.closest(".custom-checkbox-option");
-      
+
       // Get the label text (associated description)
       const labelText = label.querySelector(".custom-label").innerText.trim();
 
@@ -246,7 +246,7 @@ function getCheckboxValues() {
 }
 
 function toggleShadow() {
-const toggle = document.getElementById("toggle");; // Reference the target text element
+  const toggle = document.getElementById("toggle");; // Reference the target text element
 
   toggle.addEventListener("change", () => {
     if (toggle.checked) {
